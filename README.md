@@ -26,6 +26,7 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ### Atajos de teclado
 
+- `Ctrl + C` — Copia el texto
 - `Alt + G` — Iniciar / Pausar / Reanudar
 - `Alt + F` — Finalizar lectura
 
@@ -111,9 +112,12 @@ Lector-Texto-a-Voz-para-todo/
 ## Cómo funciona
 
 1. Selecciona cualquier texto en cualquier aplicación
-2. Pulsa `Alt + G` (o el botón "Iniciar" en la ventana)
-3. La app captura el texto del portapapeles y lo envía a la voz neural de Microsoft
-4. El audio se reproduce en tu equipo
+2. Copia el texto `Ctrl + C`
+3. Pulsa `Alt + G` (o el botón "Iniciar" en la ventana)
+4. La app captura el texto del portapapeles y lo envía a la voz neural de Microsoft
+5. El audio se reproduce en tu equipo
+6. Pulsa `Alt + G` de nuevo para pausar o reanudar la lectura
+7. Pulsa `Alt + F` (o el botón "Finalizar") para detener por completo
 
 ---
 
