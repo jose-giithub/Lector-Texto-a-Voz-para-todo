@@ -1,4 +1,4 @@
-# LectorVoz
+# Lector-Texto-a-Voz-para-todo
 
 Aplicación de escritorio para Windows que lee en voz alta cualquier texto que tengas seleccionado en pantalla. Selecciona texto en el navegador, en un PDF, en Word, o en cualquier otra app, pulsa un atajo y escucha.
 
@@ -44,8 +44,8 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/LectorVoz.git
-cd LectorVoz
+git clone https://github.com/tu-usuario/Lector-Texto-a-Voz-para-todo.git
+cd Lector-Texto-a-Voz-para-todo
 ```
 
 ### 2. Crea un entorno virtual (recomendado)
@@ -96,7 +96,7 @@ El ejecutable quedará en `dist/LectorVoz.exe`. Puedes moverlo a cualquier carpe
 ## Estructura del proyecto
 
 ```text
-LectorVoz/
+Lector-Texto-a-Voz-para-todo/
 ├── main.py           # Punto de entrada, conecta todos los módulos
 ├── app.py            # Ventana y lógica de la interfaz
 ├── tts_engine.py     # Motor de voz (edge-tts + pygame)
