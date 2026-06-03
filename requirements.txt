@@ -1,0 +1,6 @@
+edge-tts
+pygame
+keyboard
+pyperclip
+pystray
+Pillow

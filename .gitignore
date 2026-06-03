@@ -1,0 +1,47 @@
+# ── PyInstaller ────────────────────────────────────────────────────────────────
+# Carpeta de trabajo intermedio (se regenera con cada build)
+build/
+# Ejecutable final compilado (binario, no código fuente)
+dist/
+# Nota: lectorvoz.spec SÍ se sube al repo (es configuración de build, no sensible)
+
+# ── Python ─────────────────────────────────────────────────────────────────────
+# Bytecode compilado (se regenera automáticamente al ejecutar)
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Entornos virtuales ──────────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ── Variables de entorno y secretos ────────────────────────────────────────────
+# NUNCA subir claves de API, contraseñas o tokens
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.py
+config_secret.py
+
+# ── Logs y archivos temporales ──────────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+logs/
+
+# ── Audio temporal (edge_tts genera MP3 temporales durante la lectura) ──────────
+*.mp3
+
+# ── IDEs y editores ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+Thumbs.db
+desktop.ini
