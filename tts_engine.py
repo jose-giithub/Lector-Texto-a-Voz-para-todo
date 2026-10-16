@@ -13,20 +13,21 @@ import pygame
 VOICE = "es-ES-ElviraNeural"
 
 
-def _app_dir():
-    """Carpeta de la aplicación, tanto en desarrollo como empaquetada.
+def _log_dir():
+    """Carpeta fija para el log, independiente de dónde esté el .exe.
 
-    Con PyInstaller, __file__ apunta a la carpeta temporal _MEIPASS (que se
-    borra al cerrar). Para que el log quede junto al .exe usamos la ruta del
-    propio ejecutable cuando la app está "congelada".
+    Usamos %LOCALAPPDATA%/LectorVoz para que el log no aparezca en el
+    escritorio (u otra carpeta) si el ejecutable se mueve o se lanza desde
+    un acceso directo.
     """
-    if getattr(sys, "frozen", False):
-        return os.path.dirname(sys.executable)
-    return os.path.dirname(os.path.abspath(__file__))
+    base = os.environ.get("LOCALAPPDATA") or os.path.expanduser("~")
+    path = os.path.join(base, "LectorVoz")
+    os.makedirs(path, exist_ok=True)
+    return path
 
 
-# Log junto al ejecutable/script para diagnosticar fallos tras días de uptime.
-LOG_PATH = os.path.join(_app_dir(), "lectorvoz.log")
+# Log en una carpeta fija para diagnosticar fallos tras días de uptime.
+LOG_PATH = os.path.join(_log_dir(), "lectorvoz.log")
 logging.basicConfig(
     filename=LOG_PATH,
     level=logging.INFO,

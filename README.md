@@ -104,7 +104,8 @@ Lector-Texto-a-Voz-para-todo/
 ├── hotkeys.py        # Atajos de teclado globales
 ├── tray.py           # Icono en la bandeja del sistema
 ├── lectorvoz.spec    # Configuración de PyInstaller
-└── icon.ico          # Icono de la aplicación
+├── icon.ico          # Icono de la aplicación
+└── CONTROL_DE_VERSIONES.md  # Historial de cambios (añadir entrada en cada modificación)
 ```
 
 ---
@@ -123,12 +124,17 @@ Lector-Texto-a-Voz-para-todo/
 
 ## Solución de problemas
 
-La aplicación guarda un registro (log) de su actividad y de cualquier error en un archivo llamado **`lectorvoz.log`**, situado **en la misma carpeta que el programa**:
+La aplicación guarda un registro (log) de su actividad y de cualquier error en un archivo llamado **`lectorvoz.log`**, situado siempre en la misma carpeta, estés donde estés ejecutando el programa:
 
-- Si ejecutas desde el código fuente: junto a los archivos `.py`.
-- Si usas el `.exe` compilado: en la misma carpeta donde tengas el ejecutable.
+```
+%LOCALAPPDATA%\LectorVoz\lectorvoz.log
+```
 
-El archivo **se crea automáticamente** la primera vez que ejecutas el programa (no viene incluido en la descarga). Si la lectura no funciona —por ejemplo, el botón pasa a naranja un instante y vuelve al estado inicial sin que se escuche nada— abre `lectorvoz.log` con cualquier editor de texto y mira las últimas líneas: ahí verás la causa. La línea `La reproduccion no arranco; posible dispositivo de audio no disponible` indica un problema con el dispositivo de sonido.
+Para abrirla, pega `%LOCALAPPDATA%\LectorVoz` en la barra de direcciones del Explorador de archivos o en `Win + R`.
+
+> Consejo: no muevas `LectorVoz.exe` fuera de su carpeta. Si lo quieres a mano, crea un **acceso directo** en el escritorio (clic derecho sobre el `.exe` → *Enviar a* → *Escritorio (crear acceso directo)*).
+
+El archivo **se crea automáticamente** la primera vez que ejecutas el programa (no viene incluido en la descarga). Si la lectura no funciona —por ejemplo, el botón pasa a naranja un instante y vuelve al estado inicial sin que se escuche nada— abre `lectorvoz.log` con cualquier editor de texto y mira las últimas líneas: ahí verás la causa. La línea `La reproduccion no arranco; posible dispositivo de audio no disponible` indica un problema con el dispositivo de sonido. Un error `403` con `WSServerHandshakeError` significa que el servicio de voz de Microsoft ha cambiado y hay que actualizar la librería: `pip install -U edge-tts` y volver a compilar el `.exe`.
 
 > La app re-inicializa el dispositivo de audio antes de cada lectura, de modo que se recupera sola si el sonido deja de funcionar tras muchos días con el equipo encendido (no necesitas reiniciar el ordenador).
 
