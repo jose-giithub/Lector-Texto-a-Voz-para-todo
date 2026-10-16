@@ -121,6 +121,19 @@ Lector-Texto-a-Voz-para-todo/
 
 ---
 
+## Solución de problemas
+
+La aplicación guarda un registro (log) de su actividad y de cualquier error en un archivo llamado **`lectorvoz.log`**, situado **en la misma carpeta que el programa**:
+
+- Si ejecutas desde el código fuente: junto a los archivos `.py`.
+- Si usas el `.exe` compilado: en la misma carpeta donde tengas el ejecutable.
+
+El archivo **se crea automáticamente** la primera vez que ejecutas el programa (no viene incluido en la descarga). Si la lectura no funciona —por ejemplo, el botón pasa a naranja un instante y vuelve al estado inicial sin que se escuche nada— abre `lectorvoz.log` con cualquier editor de texto y mira las últimas líneas: ahí verás la causa. La línea `La reproduccion no arranco; posible dispositivo de audio no disponible` indica un problema con el dispositivo de sonido.
+
+> La app re-inicializa el dispositivo de audio antes de cada lectura, de modo que se recupera sola si el sonido deja de funcionar tras muchos días con el equipo encendido (no necesitas reiniciar el ordenador).
+
+---
+
 ## Guía rápida del código
 
 Para quien quiera modificar o extender el proyecto, aquí está dónde tocar cada cosa:
@@ -163,9 +176,11 @@ Gestiona toda la generación y reproducción del audio. Usa `edge-tts` para gene
 
 - Generación del audio en un hilo separado (para no bloquear la UI)
 - Control de pausa/reanudación con `pygame.mixer`
+- Reinicio del dispositivo de audio antes de cada lectura (`_reset_mixer()`), para recuperarse solo si el handle de audio queda obsoleto tras días de uptime
+- Registro de errores en `lectorvoz.log` (ver [Solución de problemas](#solución-de-problemas))
 - Conversión del valor del slider (80-300) al formato de velocidad de edge-tts
 
-**Si quieres cambiar:** la voz → constante `VOICE = "es-ES-ElviraNeural"` en la línea 11, el rango de velocidad → método `set_rate()`
+**Si quieres cambiar:** la voz → constante `VOICE = "es-ES-ElviraNeural"`, el rango de velocidad → método `set_rate()`
 
 ---
 
