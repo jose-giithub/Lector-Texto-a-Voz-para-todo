@@ -1,6 +1,6 @@
-edge-tts>=7.3.1
-pygame
-keyboard
-pyperclip
-pystray
-Pillow
+edge-tts==7.3.1
+pygame==2.6.1
+keyboard==0.13.5
+pyperclip==1.11.0
+pystray==0.19.5
+Pillow==12.3.0

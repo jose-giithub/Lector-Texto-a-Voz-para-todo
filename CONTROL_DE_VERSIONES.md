@@ -13,6 +13,20 @@
 
 ---
 
+## 2026-10-16 — Versiones fijas de las dependencias
+
+**Problema:** sin versiones fijas, cada compilación podía usar versiones distintas de las librerías, y algo que funcionaba podía dejar de hacerlo sin que nos diéramos cuenta.
+
+**Decisión:** mantener una versión estable y probada, **sin actualizaciones automáticas**. Solo se actualiza cuando algo falla (por ejemplo, un error `403` en el log por cambios de Microsoft en su servicio de voz).
+
+**Cambios:**
+- `requirements.txt`: versiones exactas probadas: `edge-tts==7.3.1`, `pygame==2.6.1`, `keyboard==0.13.5`, `pyperclip==1.11.0`, `pystray==0.19.5` y `Pillow==12.3.0`.
+- `README.md`: la instalación usa `pip install -r requirements.txt` y `pyinstaller==6.22.3`. La solución del error 403 explica cómo subir de versión de forma controlada (cambiar la versión, recompilar, anotarlo aquí y guardar una copia del `.exe` que funciona).
+
+**Cómo aplicarlo:** no hace falta recompilar, porque son las mismas versiones con las que se compiló el `.exe` actual.
+
+---
+
 ## 2026-10-16 — Error 403 del servicio de voz y nueva ubicación del log
 
 **Problema:** tras el arreglo anterior, la app seguía sin sonar. Detectaba el texto, pero no se oía nada. Además, al mover el `.exe` al escritorio, el log `lectorvoz.log` se creaba en el escritorio.

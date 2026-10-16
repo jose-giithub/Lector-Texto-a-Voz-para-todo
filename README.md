@@ -59,7 +59,7 @@ venv\Scripts\activate
 ### 3. Instala las dependencias
 
 ```bash
-pip install edge-tts pygame pystray Pillow pyperclip keyboard
+pip install -r requirements.txt
 ```
 
 ### 4. Ejecuta la aplicación
@@ -79,7 +79,7 @@ Si quieres un `.exe` independiente que no necesite Python instalado:
 ### 1. Instala PyInstaller
 
 ```bash
-pip install pyinstaller
+pip install pyinstaller==6.22.3
 ```
 
 ### 2. Compila usando el archivo de configuración incluido
@@ -134,7 +134,7 @@ Para abrirla, pega `%LOCALAPPDATA%\LectorVoz` en la barra de direcciones del Exp
 
 > Consejo: no muevas `LectorVoz.exe` fuera de su carpeta. Si lo quieres a mano, crea un **acceso directo** en el escritorio (clic derecho sobre el `.exe` → *Enviar a* → *Escritorio (crear acceso directo)*).
 
-El archivo **se crea automáticamente** la primera vez que ejecutas el programa (no viene incluido en la descarga). Si la lectura no funciona —por ejemplo, el botón pasa a naranja un instante y vuelve al estado inicial sin que se escuche nada— abre `lectorvoz.log` con cualquier editor de texto y mira las últimas líneas: ahí verás la causa. La línea `La reproduccion no arranco; posible dispositivo de audio no disponible` indica un problema con el dispositivo de sonido. Un error `403` con `WSServerHandshakeError` significa que el servicio de voz de Microsoft ha cambiado y hay que actualizar la librería: `pip install -U edge-tts` y volver a compilar el `.exe`.
+El archivo **se crea automáticamente** la primera vez que ejecutas el programa (no viene incluido en la descarga). Si la lectura no funciona —por ejemplo, el botón pasa a naranja un instante y vuelve al estado inicial sin que se escuche nada— abre `lectorvoz.log` con cualquier editor de texto y mira las últimas líneas: ahí verás la causa. La línea `La reproduccion no arranco; posible dispositivo de audio no disponible` indica un problema con el dispositivo de sonido. Un error `403` con `WSServerHandshakeError` significa que el servicio de voz de Microsoft ha cambiado y hay que actualizar la librería: cambia en `requirements.txt` la versión de `edge-tts` por la última publicada, ejecuta `pip install -r requirements.txt`, vuelve a compilar el `.exe` y anótalo en [CONTROL_DE_VERSIONES.md](CONTROL_DE_VERSIONES.md). Guarda antes una copia del `.exe` que funciona por si la nueva versión falla.
 
 > La app re-inicializa el dispositivo de audio antes de cada lectura, de modo que se recupera sola si el sonido deja de funcionar tras muchos días con el equipo encendido (no necesitas reiniciar el ordenador).
 
