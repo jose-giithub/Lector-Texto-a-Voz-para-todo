@@ -33,7 +33,25 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ---
 
-## Requisitos
+<!-- REVISION LV5 (29/10/2026): sección Descargar nueva (E6) con requisitos del .exe (sin Python) y requisitos para desarrolladores aparte; Instalación y uso pasa a decir "desde el código". El enlace de Releases da 404 hasta publicar la Release v1.0.0. Depende de: README.md -->
+## Descargar
+
+### Cómo descargar
+
+1. Ve a la [última versión (Releases)](https://github.com/jose-giithub/Lector-Texto-a-Voz-para-todo/releases/latest).
+2. Descarga `LectorVoz.exe` y ábrelo con doble clic. No hace falta instalar Python.
+3. La ventana aparece minimizada en la bandeja del sistema. Haz clic en el icono para mostrarla.
+
+### Requisitos
+
+- Windows 10 / 11
+- Conexión a internet (para generar el audio con la voz neural)
+
+---
+
+## Requisitos para desarrolladores
+
+Solo si quieres ejecutar o compilar el programa desde el código:
 
 - Windows 10 / 11
 - Python 3.12 o superior
@@ -41,7 +59,7 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ---
 
-## Instalación y uso
+## Instalación y uso (desde el código)
 
 <!-- REVISION LV5 (29/10/2026): URL del git clone corregida (tu-usuario pasa a jose-giithub). Depende de: README.md -->
 ### 1. Clona el repositorio
