@@ -8,7 +8,8 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ## Redes sociales 🌐
 
-**Portfolio**🔗[Enlace portfolio:](https://portfolio.jose-rodriguez-blanco.es)
+<!-- REVISION LV5 (29/10/2026): enlace del portfolio actualizado a la dirección actual (antes portfolio.jose-rodriguez-blanco.es). Depende de: README.md -->
+**Portfolio**🔗[Enlace portfolio:](https://jose-rodriguez-blanco.es)
 **LinkedIn**🔗[Enlace LinkedIn:](https://www.linkedin.com/in/joseperfil/)
 **GitHub**🔗[Enlace GitHub:](https://github.com/jose-giithub)
 
@@ -42,10 +43,11 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ## Instalación y uso
 
+<!-- REVISION LV5 (29/10/2026): URL del git clone corregida (tu-usuario pasa a jose-giithub). Depende de: README.md -->
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/Lector-Texto-a-Voz-para-todo.git
+git clone https://github.com/jose-giithub/Lector-Texto-a-Voz-para-todo.git
 cd Lector-Texto-a-Voz-para-todo
 ```
 
