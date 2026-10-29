@@ -33,7 +33,7 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 
 ---
 
-<!-- REVISION LV5 (29/10/2026): sección Descargar nueva (E6) con requisitos del .exe (sin Python) y requisitos para desarrolladores aparte; Instalación y uso pasa a decir "desde el código". El enlace de Releases da 404 hasta publicar la Release v1.0.0. Depende de: README.md -->
+<!-- REVISION LV5 (29/10/2026, retocado 29/10/2026): sección Descargar nueva (E6) con requisitos del .exe (sin Python) y requisitos para desarrolladores aparte; Instalación y uso pasa a decir "desde el código"; nota de Windows y antivirus (E8). Release v1.0.0 ya publicada. Depende de: README.md -->
 ## Descargar
 
 ### Cómo descargar
@@ -41,6 +41,10 @@ Aplicación de escritorio para Windows que lee en voz alta cualquier texto que t
 1. Ve a la [última versión (Releases)](https://github.com/jose-giithub/Lector-Texto-a-Voz-para-todo/releases/latest).
 2. Descarga `LectorVoz.exe` y ábrelo con doble clic. No hace falta instalar Python.
 3. La ventana aparece minimizada en la bandeja del sistema. Haz clic en el icono para mostrarla.
+
+> **Aviso de Windows:** en algunos equipos, al ejecutarlo por primera vez puede aparecer "Windows protegió su PC" (SmartScreen). Es normal: el programa no está firmado digitalmente. Pulsa **Más información** y luego **Ejecutar de todas formas**. El código fuente está en este repositorio por si quieres revisarlo o compilarlo tú mismo.
+>
+> Algunos antivirus pueden marcar el archivo por error: es un falso positivo habitual en programas creados con PyInstaller.
 
 ### Requisitos
 
